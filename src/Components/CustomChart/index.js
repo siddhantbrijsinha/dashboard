@@ -19,6 +19,7 @@ const CustomChart = (props) => {
       <AreaChart
         width={600}
         height={200}
+        style={{ margin: "auto" }}
         data={props.graphData}
         syncId="anyId"
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
@@ -39,7 +40,7 @@ const CustomChart = (props) => {
 
   const barChart = () => {
     return (
-      <BarChart width={600} height={200} data={props.graphData}>
+      <BarChart width={600} height={200} style={{ margin: "auto" }} data={props.graphData}>
         <XAxis dataKey="month" />
         <YAxis />
         <Bar dataKey="salary" fill="#8884d8" />
