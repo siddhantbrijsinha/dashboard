@@ -23,7 +23,7 @@ const CustomTable = (props) => {
 
   return (
     <Grid container spacing={2} className="parent-table-div">
-      <Grid item xs={12}>
+      <Grid item xs={12} style={{ padding: 0 }}>
         <TableContainer component={Paper}>
           <div className="table-header-style" component="span">
             <div className="headdingStyle">Salary Table</div>
