@@ -1,0 +1,74 @@
+.PopUpDiv {
+  position: fixed;
+  z-index: 1;
+  top: 25%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleTagStyle {
+  text-align: center;
+  padding: 6px;
+  width: 100%;
+}
+.popUpDivChild {
+  background-color: antiquewhite;
+  min-width: 420px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.popUpHeader {
+  min-height: 45px;
+  border-bottom: 2px solid black;
+}
+.popUpBody {
+  min-height: 100px;
+}
+
+.jw-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+
+  overflow: auto;
+}
+
+.jw-modal-body {
+  background: #fff;
+  margin: 40px;
+  width: 38vw;
+  height: 47vh;
+}
+.title {
+  margin-bottom: 10px;
+  height: 8vh;
+}
+
+.jw-modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: #000;
+  opacity: 0.75;
+
+  z-index: 900;
+}
+
+body.jw-modal-open {
+  overflow: hidden;
+}
