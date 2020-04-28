@@ -8,52 +8,68 @@ import {
   AreaChart,
   BarChart,
   Bar,
+  ResponsiveContainer,
 } from "recharts";
 import { connect } from "react-redux";
 
 import "./customChart.css";
+import { Grid, Paper, Card } from "@material-ui/core";
 
 const CustomChart = (props) => {
   const areaChart = () => {
     return (
-      <AreaChart
-        width={600}
-        height={200}
-        style={{ margin: "auto" }}
-        data={props.graphData}
-        syncId="anyId"
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Area
-          type="monotone"
-          dataKey="salary"
-          stroke="#8884d8"
-          fill="#8884d8"
-        />
-      </AreaChart>
+      <ResponsiveContainer width='100%' aspect={4.0 / 3.0}>
+        <AreaChart
+          // width={300}
+          // height={200}
+          style={{ margin: "auto" }}
+          data={props.graphData}
+          syncId="anyId"
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="salary"
+            stroke="#8884d8"
+            fill="#8884d8"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     );
   };
 
   const barChart = () => {
     return (
-      <BarChart width={600} height={200} style={{ margin: "auto" }} data={props.graphData}>
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Bar dataKey="salary" fill="#8884d8" />
-        <Tooltip />
-      </BarChart>
+      <ResponsiveContainer width='100%' aspect={4.0 / 3.0}>
+        <BarChart /* width={300} height={200} */ style={{ margin: "auto" }} data={props.graphData}>
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Bar dataKey="salary" fill="#8884d8" />
+          <Tooltip />
+        </BarChart>
+      </ResponsiveContainer>
     );
   };
 
   return (
-    <div className="parent-chart-div">
-      <div>{areaChart()}</div>
-      <div>{barChart()}</div>
-    </div>
+    <Grid container spacing={2} className="parent-chart-div">
+      <Grid item xs={12} md={12} lg={6} sm={12}>
+        <Card className="top-card">Area Chart</Card>
+        <Paper>
+          {areaChart()}
+        </Paper>
+      </Grid>
+      <Grid item xs={12} md={12} lg={6} sm={12}>
+        <Card className="top-card">Bar Chart</Card>
+        <Paper>
+          {barChart()}
+        </Paper>
+      </Grid>
+    </Grid>
   );
 };
 

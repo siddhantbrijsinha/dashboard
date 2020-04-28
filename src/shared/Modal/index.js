@@ -3,8 +3,15 @@ import "./style.css";
 import { popUpClose } from "../../actions/common";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Grid, TextField, Button, Select, FormControl, InputLabel } from "@material-ui/core";
-import { dataAddition } from '../../actions/DataManipulation';
+import {
+  Grid,
+  TextField,
+  Button,
+  Select,
+  FormControl,
+  InputLabel,
+} from "@material-ui/core";
+import { dataAddition } from "../../actions/DataManipulation";
 import { range } from "../../helper/common";
 
 const PopUp = ({ dataAddition, popUpClose }) => {
@@ -41,20 +48,19 @@ const PopUp = ({ dataAddition, popUpClose }) => {
             borderRadius: "9px",
           }}
         >
-          <div className="title" style={{ background: '#f50057' }}>
+          <div className="title" style={{ background: "#f50057" }}>
             <h3 className="titleTagStyle">Salary Table</h3>
-            <button
-              onClick={() => popUpClose()}
-              style={{ margin: '15px' }}
-            >
+            <button onClick={() => popUpClose()} style={{ margin: "15px" }}>
               X
             </button>
           </div>
           <div>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <FormControl variant="outlined" style={{ width: '90%' }}>
-                  <InputLabel id="demo-simple-select-outlined-label">Select Month</InputLabel>
+                <FormControl variant="outlined" style={{ width: "90%" }}>
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Select Month
+                  </InputLabel>
                   <Select
                     variant="outlined"
                     native
@@ -81,19 +87,22 @@ const PopUp = ({ dataAddition, popUpClose }) => {
                 </FormControl>
               </Grid>
               <Grid item xs={12}>
-                <FormControl variant="outlined" style={{ width: '90%' }}>
-                  <InputLabel id="demo-simple-select-outlined-label">Select Year</InputLabel>
+                <FormControl variant="outlined" style={{ width: "90%" }}>
+                  <InputLabel id="demo-simple-select-outlined-label">
+                    Select Year
+                  </InputLabel>
                   <Select
                     native
                     onChange={handleOnYearChange}
                     inputProps={{
-                      name: 'year',
-                      id: 'filled-age-native-simple',
+                      name: "year",
+                      id: "filled-age-native-simple",
                     }}
                   >
                     <option aria-label="None" value="" />
-                    {range(1995, 2040).map((select) => <option value={select}>{select}</option>)
-                    }
+                    {range(1995, 2040).map((select) => (
+                      <option value={select}>{select}</option>
+                    ))}
                   </Select>
                 </FormControl>
               </Grid>
@@ -102,7 +111,7 @@ const PopUp = ({ dataAddition, popUpClose }) => {
                   variant="outlined"
                   required
                   fullWidth
-                  style={{ width: '90%' }}
+                  style={{ width: "90%" }}
                   value={salary}
                   id="salary"
                   label=" Enter Salary"
@@ -111,7 +120,13 @@ const PopUp = ({ dataAddition, popUpClose }) => {
                 />
               </Grid>
               <Grid item xs={12}>
-                <Button variant="contained" color="secondary" style={{ width: "90%" }} onClick={handleOnButtonClick}>Submit Salary</Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleOnButtonClick}
+                >
+                  Submit Salary
+                </Button>
               </Grid>
             </Grid>
           </div>

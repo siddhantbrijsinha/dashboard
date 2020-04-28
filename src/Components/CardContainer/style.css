@@ -1,0 +1,34 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    flex: 1 1 auto;
+    min-height: 1px;
+    color: #fff !important;
+    padding: 1.25rem;
+}
+
+.card1 {
+    background-color: #007bff !important;
+}
+
+.card2 {
+    background-color: #ffc107 !important;
+}
+
+.card3 {
+    background-color: #28a745 !important;
+}
+
+.card4 {
+    background-color: #dc3545 !important;
+}
