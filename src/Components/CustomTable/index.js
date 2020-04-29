@@ -50,7 +50,7 @@ const CustomTable = (props) => {
             <TableBody>
               {props.graphData.map((row, index) => (
                 <TableRow key={row.name}>
-                  <TableCell style={{ width: 20 }} align="center">
+                  <TableCell key={index} style={{ width: 20 }} align="center">
                     {index + 1}
                   </TableCell>
                   <TableCell align="center">{`${row.month}`}</TableCell>

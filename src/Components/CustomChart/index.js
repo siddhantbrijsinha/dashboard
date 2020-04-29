@@ -20,8 +20,6 @@ const CustomChart = (props) => {
     return (
       <ResponsiveContainer width='100%' aspect={4.0 / 2.0}>
         <AreaChart
-          // width={300}
-          // height={200}
           style={{ margin: "auto" }}
           data={props.graphData}
           syncId="anyId"
@@ -45,7 +43,7 @@ const CustomChart = (props) => {
   const barChart = () => {
     return (
       <ResponsiveContainer width='100%' aspect={4.0 / 2.0}>
-        <BarChart /* width={300} height={200} */ style={{ margin: "auto" }} data={props.graphData}>
+        <BarChart style={{ margin: "auto" }} data={props.graphData}>
           <XAxis dataKey="month" />
           <YAxis />
           <Bar dataKey="salary" fill="#8884d8" />
@@ -59,13 +57,13 @@ const CustomChart = (props) => {
     <Grid container spacing={2} className="parent-chart-div">
       <Grid item xs={12} md={6} lg={6} sm={12}>
         <Card className="top-card">Area Chart</Card>
-        <Paper style={{marginTop: '10px'}}>
+        <Paper style={{ marginTop: '10px' }}>
           {areaChart()}
         </Paper>
       </Grid>
       <Grid item xs={12} md={6} lg={6} sm={12}>
         <Card className="top-card">Bar Chart</Card>
-        <Paper style={{marginTop: '10px'}}>
+        <Paper style={{ marginTop: '10px' }}>
           {barChart()}
         </Paper>
       </Grid>

@@ -21,3 +21,28 @@ export const range = (start, stop, step) => {
 
   return result;
 };
+
+export const getMaxSalary = (data) => {
+  return data.reduce((max, b) => Math.max(max, b.salary), data[0].salary);
+}
+
+export const getMinSalary = (data) => {
+  return data.reduce((min, b) => Math.min(min, b.salary), data[0].salary);
+}
+
+
+export const getAverageSalary = (data) => {
+  let sum = 0;
+  data.forEach((value) => {
+    sum += parseInt(value.salary);
+  })
+  return (sum / data.length);
+}
+
+export const getTotalSalary = (data) => {
+  let sum = 0;
+  data.forEach((value) => {
+    sum += parseInt(value.salary);
+  })
+  return sum;
+}

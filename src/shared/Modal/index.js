@@ -18,7 +18,7 @@ const PopUp = ({ dataAddition, popUpClose }) => {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState(2020);
 
-  const [salary, setSalary] = useState("");
+  const [salary, setSalary] = useState(0);
 
   const handleOnButtonClick = () => {
     let timeData = `${month}-${year}`;
